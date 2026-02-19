@@ -1,0 +1,19 @@
+{
+  "name": "hosinoneko_torsion_mechanism",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "update": "node update-db.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1",
+    "sharp": "^0.34.5"
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>我的線上相簿</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+        .tag-container { margin-bottom: 20px; }
+        .tag { 
+            display: inline-block; padding: 5px 15px; margin-right: 10px;
+            background: #fff; border: 1px solid #ccc; border-radius: 20px;
+            text-decoration: none; color: #333;
+        }
+        .tag.active { background: #007bff; color: white; border-color: #007bff; }
+        .gallery { 
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 20px; 
+        }
+        .photo-card { background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .photo-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
+        .photo-tags { margin-top: 10px; }
+        .photo-tag { font-size: 0.8em; color: #007bff; margin-right: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>線上相簿</h1>
+
+    <div class="tag-container">
+        <a href="/" class="tag <%= !selectedTag ? 'active' : '' %>">全部</a>
+        <% allTags.forEach(tag => { %>
+            <a href="/?tag=<%= tag %>" class="tag <%= selectedTag === tag ? 'active' : '' %>">
+                #<%= tag %>
+            </a>
+        <% }) %>
+    </div>
+
+    <div class="gallery">
+    <% if (photos.length > 0) { %>
+        <% photos.forEach(photo => { %>
+            <div class="photo-card">
+                <a href="<%= photo.url %>" target="_blank" title="查看原圖">
+                    <img 
+                        src="<%= photo.thumbUrl %>" 
+                        alt="<%= photo.title %>" 
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </a>
+                
+                <div class="photo-info">
+                    <h3><%= photo.title %></h3>
+                    <div class="photo-tags">
+                        <% photo.tags.forEach(tag => { %>
+                            <a href="/?tag=<%= encodeURIComponent(tag) %>" class="photo-tag">
+                                #<%= tag %>
+                            </a>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <div class="empty-state">
+            <p>找不到相關標籤的照片。 <a href="/">返回全部照片</a></p>
+        </div>
+    <% } %>
+</div>
+
+</body>
+</html>
