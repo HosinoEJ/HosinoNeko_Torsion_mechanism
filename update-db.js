@@ -46,7 +46,7 @@ async function updateDatabase() {
                     filename: file,
                     url: `/image/${file}`,         // 原圖 (點擊放大用)
                     thumbUrl: `/image/${thumbName}`, // 縮圖 (列表顯示用)
-                    tags: ["檔案袋1"]
+                    tags: ["檔案袋2——繪畫"]
                 });
                 updated = true;
             } catch (err) {
