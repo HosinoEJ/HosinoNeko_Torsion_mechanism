@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
+const tagupd = '本子3——北斗前辈の圣遗物'
+
 const IMAGE_DIR = path.join(__dirname, 'public', 'image');
 const DATA_FILE = path.join(__dirname, 'data.json');
 const SUPPORTED_EXTS = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
@@ -46,7 +48,7 @@ async function updateDatabase() {
                     filename: file,
                     url: `/image/${file}`,         // 原圖 (點擊放大用)
                     thumbUrl: `/image/${thumbName}`, // 縮圖 (列表顯示用)
-                    tags: ["檔案袋2——繪畫"]
+                    tags: [tagupd]
                 });
                 updated = true;
             } catch (err) {
