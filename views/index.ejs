@@ -2,12 +2,12 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <title>我的線上相簿</title>
+    <title>HosinoNeko|Torsion</title>
     <style>
         body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
         .tag-container { margin-bottom: 20px; }
         .tag { 
-            display: inline-block; padding: 5px 15px; margin-right: 10px;
+            display: inline-block; padding: 5px 15px; margin: 10px;
             background: #fff; border: 1px solid #ccc; border-radius: 20px;
             text-decoration: none; color: #333;
         }
@@ -60,12 +60,17 @@
                 </div>
             </div>
         <% }) %>
-    <% } else { %>
-        <div class="empty-state">
-            <p>找不到相關標籤的照片。 <a href="/">返回全部照片</a></p>
-        </div>
-    <% } %>
-</div>
+        <% } else { %>
+            <div class="empty-state">
+                <p>找不到相關標籤的照片。 <a href="/">返回全部照片</a></p>
+            </div>
+        <% } %>
+    </div>
+    <hr>
+    <div>
+        <p>關於我們：</p>
+        <p><a href="https://hosinoneko.me">本人網站</a> | <a href="https://torsion.hosinoneko.me">NO TORSION PROJECT</a> | <a href="https://x.com/HosinoEJ">X</a></p>
+    </div>
 
 </body>
 </html>

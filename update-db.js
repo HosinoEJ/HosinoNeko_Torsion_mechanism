@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-const tagupd = ['本子4']
+const tagupd = ['本子2']
 
 const IMAGE_DIR = path.join(__dirname, 'public', 'image');
 const DATA_FILE = path.join(__dirname, 'data.json');
